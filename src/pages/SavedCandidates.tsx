@@ -13,8 +13,8 @@ const SavedCandidates = () => {
   }, []);
 
   // Remove a candidate from the saved list
-  const removeCandidate = (id: number) => {
-    const updatedCandidates = savedCandidates.filter(candidate => candidate.id = id);
+ const removeCandidate = (id: number) => {
+    const updatedCandidates = savedCandidates.filter(candidate => candidate.id !== id);
     setSavedCandidates(updatedCandidates);
     localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
   };
